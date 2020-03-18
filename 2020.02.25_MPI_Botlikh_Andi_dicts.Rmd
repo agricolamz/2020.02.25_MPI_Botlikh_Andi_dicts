@@ -535,8 +535,12 @@ botlikh_analyse %>%
   scale_y_log10()+
   scale_fill_continuous(type = "viridis")+
   labs(x = "Number of utterances in [Alekseev, Azaev 2019] (log scale)",
-       y = "Number of utterances in [Saidova, Abusov 2012] (log scale)")
+       y = "Number of utterances in [Saidova, Abusov 2012] (log scale)") ->
+  botlikh1
+ggsave(filename = "images/04_compare_botlikh_dicts_with_stress.png", botlikh1, device = "png")
 ```
+
+![](images/04_compare_botlikh_dicts_with_stress.png)
 
 # Comparing two Botlikh dictionaries: with stress
 
@@ -560,8 +564,12 @@ botlikh_analyse %>%
   scale_y_log10()+
   scale_fill_continuous(type = "viridis")+
   labs(x = "Number of utterances in [Alekseev, Azaev 2019] (log scale)",
-       y = "Number of utterances in [Saidova, Abusov 2012] (log scale)")
+       y = "Number of utterances in [Saidova, Abusov 2012] (log scale)") ->
+  botlikh2
+ggsave(filename = "images/05_compare_botlikh_dicts_without_stress.png", botlikh2, device = "png")
 ```
+
+![](images/05_compare_botlikh_dicts_without_stress.png)
 
 # Zilo Andi data
 
@@ -757,8 +765,12 @@ merged_data %>%
   scale_x_log10()+
   labs(y = "Number of utterances in Andi (log scale)",
        x = "Number of utterances in [Saidova, Abusov 2012] (log scale)")+
-  theme(legend.title = element_blank())
+  theme(legend.title = element_blank()) ->
+  zilo1
+ggsave(filename = "images/06_compare_botlikh_zilo.png", zilo1, device = "png")
 ```
+
+![](images/06_compare_botlikh_zilo.png)
 
 # Comparing [@alekseev2019] and Zilo
 
@@ -773,8 +785,12 @@ merged_data %>%
   scale_x_log10()+
   labs(y = "Number of utterances in Andi (log scale)",
        x = "Number of utterances in [Alekseev, Azaev 2019] (log scale)")+
-  theme(legend.title = element_blank())
+  theme(legend.title = element_blank()) ->
+  zilo2
+ggsave(filename = "images/07_compare_botlikh_zilo.png", zilo2, device = "png")
 ```
+
+![](images/07_compare_botlikh_zilo.png)
 
 # Comparing Botlikh and Zilo: PCA analysis
 
@@ -916,8 +932,12 @@ visualise_simplified %>%
   theme_no_axes()+
   facet_grid(source~type, scales = "free")+
   theme(legend.position = "bottom")+
-  labs(caption = "C — obstruent, L — sonorant, V — vowel, # — syllable boundary")
+  labs(caption = "C — obstruent, L — sonorant, V — vowel, # — syllable boundary") ->
+  syllables
+ggsave(filename = "images/08_syllables.png", syllables, device = "png")
 ```
+
+![](images/08_syllables.png)
 
 # Known problems
 
